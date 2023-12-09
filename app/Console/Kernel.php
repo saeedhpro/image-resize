@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command(ResizeImages::class)->hourly();
+        $schedule->command(ResizeImages::class)->everyMinute();
         // $schedule->command('inspire')->hourly();
     }
 

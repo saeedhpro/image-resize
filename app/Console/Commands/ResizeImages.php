@@ -40,7 +40,9 @@ class ResizeImages extends Command
             $image = $manager->read($file);
 
             $image->resize(100, 100);
-
+            if (!File::exists($directory . '/resized/')) {
+                File::makeDirectory($directory . '/resized/');
+            }
             $newPath = $directory . '/resized/' . $file->getFilenameWithoutExtension().'_'.Carbon::now()->format('Y_m_d_H_i_s').'.'.$file->getExtension();
 
             $encoded = $image->toJpeg();

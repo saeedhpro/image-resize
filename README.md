@@ -4,7 +4,7 @@
 
 run this command in terminal:
 
-php artisan schedule:run
+php artisan schedule:work
 
 
 or add this to crontab
